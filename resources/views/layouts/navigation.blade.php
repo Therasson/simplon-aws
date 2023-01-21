@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <img src="/img/OIP.jpeg" alt="" style="width: 100px; height: 35px; object-fit: contain;">
                     </a>
                 </div>
 
@@ -19,6 +19,11 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('participant.create')" :active="request()->routeIs('participant.create')">
                         {{ __('Créer un participant') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('participant.index')" :active="request()->routeIs('participant.index')">
+                        {{ __('Liste de participants') }}
                     </x-nav-link>
                 </div>
             </div>

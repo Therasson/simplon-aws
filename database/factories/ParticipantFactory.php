@@ -18,8 +18,8 @@ class ParticipantFactory extends Factory
     {
         return [
             'nom_participant' => $this->faker->name,
-            'prenom_paricipant' => $this->faker->name,
-            'telepehone_participant' => $this->faker->phoneNumber(),
+            'prenom_participant' => $this->faker->name,
+            'telephone_participant' => $this->faker->phoneNumber(),
             'email_participant' => $this->faker->email,
         ];
     }

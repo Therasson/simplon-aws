@@ -13,7 +13,8 @@ class ParticipantController extends Controller
      */
     public function index()
     {
-        $participants = Participant::all();
+        $participants = Participant::orderBy('created_at', 'DESC')->get();
+        ;
         return view('participant.index', compact('participants'));
     }
 
@@ -35,7 +36,17 @@ class ParticipantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $participant = new Participant();
+        $participant->fill(
+            [
+                "nom_participant" => $request->nom,
+                "prenom_participant" => $request->prenom,
+                "telephone_participant" => $request->tepehone,
+                "email_participant" => $request->email,
+                "etat" => 1
+            ]);
+        $participant->save();
+        return redirect()->route('participant.index');
     }
 
     /**
